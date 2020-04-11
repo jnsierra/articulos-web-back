@@ -58,10 +58,10 @@ public class UsuarioEntity extends Auditable<String> {
 	@NotNull
 	@NotEmpty
 	@NotBlank
-	@Column(name = "cambioContra")
+	@Column(name = "cambio_contra")
 	private String cambioContra;
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tipoUsuario")
+	@Column(name = "tipo_usuario")
 	private TipoUsuario tipoUsuario;
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<IdeaEntity> ideas = new ArrayList<IdeaEntity>();

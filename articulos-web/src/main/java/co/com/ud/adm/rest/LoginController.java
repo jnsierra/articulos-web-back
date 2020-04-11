@@ -2,6 +2,8 @@ package co.com.ud.adm.rest;
 
 import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +28,6 @@ public class LoginController {
 
 	@Autowired
 	IUsuarioService usuarioService;
-
-	Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> test() {

@@ -52,10 +52,10 @@ public class IdeaEntity extends Auditable<String>{
 	private Long idProfesor;
 	@Column(name = "estado")
 	private String estado;
-	@Column(name = "idProfAutoriza")
+	@Column(name = "id_prof_autoriza")
 	private Long idProfesorAutoriza;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "fechaAprob")
+	@Column(name = "fecha_aprob")
 	private Date fechaAprobacion;
 	@OneToMany(mappedBy = "idea", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<ArticuloEntity> articulos;

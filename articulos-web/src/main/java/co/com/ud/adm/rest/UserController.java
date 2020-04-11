@@ -39,8 +39,6 @@ public class UserController {
 	@RequestMapping(value = "/by/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UsuarioDto[]> getUserByUser(@RequestParam(name = "correo", required = false) String correo,
 			@RequestParam(name = "tipoUsuario", required = false) TipoUsuario tipoUsuario) {
-		System.out.println("Tipo Usuario: " + tipoUsuario);
-		System.out.println("Correo: " + correo);
 		List<UsuarioEntity> usuarios = new ArrayList<>();
 		//Consulta por medio de su correo
 		if(tipoUsuario == null) {
