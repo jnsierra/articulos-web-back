@@ -1,4 +1,4 @@
-package co.com.ud.repository.entity;
+package co.com.ud.persistence.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

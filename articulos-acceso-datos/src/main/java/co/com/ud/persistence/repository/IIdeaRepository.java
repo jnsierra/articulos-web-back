@@ -1,4 +1,4 @@
-package co.com.ud.repository.repo;
+package co.com.ud.persistence.repository;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import co.com.ud.repository.entity.IdeaEntity;
+import co.com.ud.persistence.entity.IdeaEntity;
 
 @Repository
 public interface IIdeaRepository extends CrudRepository<IdeaEntity, Long>, JpaRepository<IdeaEntity, Long> {

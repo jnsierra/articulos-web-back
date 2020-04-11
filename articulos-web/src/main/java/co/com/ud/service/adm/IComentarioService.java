@@ -2,7 +2,7 @@ package co.com.ud.service.adm;
 
 import java.util.List;
 
-import co.com.ud.repository.entity.ComentarioEntity;
+import co.com.ud.persistence.entity.ComentarioEntity;
 
 public interface IComentarioService {
 	/**

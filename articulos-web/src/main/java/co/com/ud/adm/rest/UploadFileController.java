@@ -20,9 +20,9 @@ import co.com.ud.service.adm.IUploadService;
 public class UploadFileController {
 	
 	@Autowired
-	IUploadService uploadService;
+    IUploadService uploadService;
 	@Autowired
-	IArticuloService articuloService;
+    IArticuloService articuloService;
 	
 	@RequestMapping(value = "/articulo/" , method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Boolean> uploadFileArt(@RequestBody(required = true) UploadArticuloDto upload){

@@ -21,8 +21,8 @@ import co.com.ud.adm.dto.IdeaProfesorDto;
 import co.com.ud.adm.dto.ProfesorDto;
 import co.com.ud.adm.dto.UsuarioDto;
 import co.com.ud.adm.dto.alumno.IdeaAlumnoDto;
-import co.com.ud.repository.entity.IdeaEntity;
-import co.com.ud.repository.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.IdeaEntity;
+import co.com.ud.persistence.entity.UsuarioEntity;
 import co.com.ud.service.adm.IUsuarioService;
 import co.com.ud.service.adm.impl.IdeaService;
 
@@ -31,9 +31,9 @@ import co.com.ud.service.adm.impl.IdeaService;
 @CrossOrigin(origins = "*")
 public class IdeaController {
 	@Autowired
-	IdeaService ideaService;
+    IdeaService ideaService;
 	@Autowired
-	IUsuarioService usuarioService;
+    IUsuarioService usuarioService;
 	@Autowired
 	ModelMapper mapper;
 

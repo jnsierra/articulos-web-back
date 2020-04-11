@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import co.com.ud.adm.dto.profesor.NotificacionProfDto;
-import co.com.ud.repository.entity.ArticuloEntity;
+import co.com.ud.persistence.entity.ArticuloEntity;
 
 public interface IArticuloService {
 	/**

@@ -1,4 +1,4 @@
-package co.com.ud.audit;
+package co.com.ud.persistence.audit;
 
 import java.util.Optional;
 

@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import co.com.ud.adm.dto.TokenDto;
-import co.com.ud.repository.entity.UsuarioEntity;
-import co.com.ud.repository.entity.enumeracion.TipoUsuario;
+import co.com.ud.persistence.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
 
 public interface IUsuarioService {
+
 	/**
 	 * Metodo con el cual realizo el login por medio de un usuario y contrasena
 	 * 

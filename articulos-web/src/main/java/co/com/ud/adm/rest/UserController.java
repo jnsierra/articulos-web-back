@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.com.ud.adm.dto.UsuarioDto;
-import co.com.ud.repository.entity.UsuarioEntity;
-import co.com.ud.repository.entity.enumeracion.TipoUsuario;
+import co.com.ud.persistence.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
 import co.com.ud.service.adm.IUsuarioService;
 
 @RestController
@@ -30,7 +30,7 @@ import co.com.ud.service.adm.IUsuarioService;
 public class UserController {
 
 	@Autowired
-	IUsuarioService usuarioService;
+    IUsuarioService usuarioService;
 	@Autowired
 	ModelMapper map;
 	

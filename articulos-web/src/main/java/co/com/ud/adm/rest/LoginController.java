@@ -2,10 +2,6 @@ package co.com.ud.adm.rest;
 
 import java.util.Optional;
 
-import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.com.ud.adm.dto.TokenDto;
 import co.com.ud.adm.dto.UsuarioDto;
-import co.com.ud.repository.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.UsuarioEntity;
 import co.com.ud.service.adm.IUsuarioService;
 
 @RestController
@@ -27,7 +23,7 @@ import co.com.ud.service.adm.IUsuarioService;
 public class LoginController {
 
 	@Autowired
-	IUsuarioService usuarioService;
+    IUsuarioService usuarioService;
 
 	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> test() {

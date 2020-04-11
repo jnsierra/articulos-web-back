@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import co.com.ud.repository.entity.IdeaEntity;
+import co.com.ud.persistence.entity.IdeaEntity;
 
 public interface IIdeaService {
 	/**

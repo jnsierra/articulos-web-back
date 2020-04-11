@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.com.ud.adm.dto.ComentarioDto;
-import co.com.ud.repository.entity.ComentarioEntity;
+import co.com.ud.persistence.entity.ComentarioEntity;
 import co.com.ud.service.adm.IArticuloService;
 import co.com.ud.service.adm.IComentarioService;
+
+
 
 @RestController
 @RequestMapping("/v.1/comentario")
@@ -25,7 +27,7 @@ import co.com.ud.service.adm.IComentarioService;
 public class ComentarioController {
 	
 	@Autowired
-	IComentarioService comentarioService;
+    IComentarioService comentarioService;
 	
 	@Autowired
 	IArticuloService articuloService;

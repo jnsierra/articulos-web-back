@@ -1,4 +1,4 @@
-package co.com.ud.repository.entity;
+package co.com.ud.persistence.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import co.com.ud.repository.entity.enumeracion.TipoUsuario;
+import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

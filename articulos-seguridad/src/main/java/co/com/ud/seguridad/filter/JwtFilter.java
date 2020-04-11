@@ -1,4 +1,4 @@
-package co.com.ud.security.filter;
+package co.com.ud.seguridad.filter;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,11 +38,6 @@ public class JwtFilter extends OncePerRequestFilter{
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
 		try {
-			response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
-		    response.setHeader("Access-Control-Allow-Credentials", "true");
-		    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-		    response.setHeader("Access-Control-Max-Age", "3600");
-		    response.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
 			if (existeJWTToken(request, response)) {
 				Claims claims = validateToken(request);
 				if (claims.get("authorities") != null) {

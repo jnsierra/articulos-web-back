@@ -12,9 +12,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import co.com.ud.repository.entity.IdeaEntity;
-import co.com.ud.repository.entity.UsuarioEntity;
-import co.com.ud.repository.repo.IIdeaRepository;
+import co.com.ud.persistence.entity.IdeaEntity;
+import co.com.ud.persistence.entity.UsuarioEntity;
+import co.com.ud.persistence.repository.IIdeaRepository;
 import co.com.ud.service.adm.IIdeaService;
 import co.com.ud.service.adm.IUsuarioService;
 

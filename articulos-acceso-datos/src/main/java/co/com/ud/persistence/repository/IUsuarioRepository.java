@@ -1,4 +1,4 @@
-package co.com.ud.repository.repo;
+package co.com.ud.persistence.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,8 +11,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import co.com.ud.repository.entity.UsuarioEntity;
-import co.com.ud.repository.entity.enumeracion.TipoUsuario;
+import co.com.ud.persistence.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
 
 @Repository
 public interface IUsuarioRepository extends CrudRepository<UsuarioEntity, Long>, JpaRepository<UsuarioEntity, Long> {

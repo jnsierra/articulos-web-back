@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import co.com.ud.adm.dto.TokenDto;
-import co.com.ud.repository.entity.UsuarioEntity;
-import co.com.ud.repository.entity.enumeracion.TipoUsuario;
-import co.com.ud.repository.repo.IUsuarioRepository;
+import co.com.ud.persistence.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
+import co.com.ud.persistence.repository.IUsuarioRepository;
 import co.com.ud.service.adm.ITokenService;
 import co.com.ud.service.adm.IUsuarioService;
 

@@ -1,4 +1,4 @@
-package co.com.ud.repository.entity;
+package co.com.ud.persistence.entity;
 
 import java.util.ArrayList;
 import java.util.List;

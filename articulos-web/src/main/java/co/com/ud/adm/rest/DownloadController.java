@@ -19,7 +19,7 @@ import co.com.ud.service.adm.IUploadService;
 public class DownloadController {
 	
 	@Autowired
-	IUploadService uploadService; 
+    IUploadService uploadService;
 
 	@RequestMapping(value = "/articulo/{idArticulo}/" , method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<UploadArticuloDto> downloadImage(@PathVariable( name = "idArticulo" , required = true)Long idArticulo){

@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.com.ud.adm.dto.profesor.NotificacionProfDto;
-import co.com.ud.repository.entity.ArticuloEntity;
-import co.com.ud.repository.repo.IArticuloRepository;
+import co.com.ud.persistence.entity.ArticuloEntity;
+import co.com.ud.persistence.repository.IArticuloRepository;
 import co.com.ud.service.adm.IArticuloService;
 
 @Service

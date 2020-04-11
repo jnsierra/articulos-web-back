@@ -20,10 +20,10 @@ import co.com.ud.service.adm.impl.IdeaService;
 public class EstadisticasController {
 
 	@Autowired
-	IdeaService ideaService;
+    IdeaService ideaService;
 	
 	@Autowired
-	ArticuloService articuloService; 
+    ArticuloService articuloService;
 	
 	@RequestMapping(value = "/ideas/estado/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Map<String, Long>> obtenerIdeasByEstado(){

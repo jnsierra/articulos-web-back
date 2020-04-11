@@ -20,11 +20,12 @@ import co.com.ud.adm.dto.ArticuloDto;
 import co.com.ud.adm.dto.ArticuloViewDto;
 import co.com.ud.adm.dto.ProfesorDto;
 import co.com.ud.adm.dto.profesor.NotificacionProfDto;
-import co.com.ud.repository.entity.ArticuloEntity;
-import co.com.ud.repository.entity.UsuarioEntity;
+import co.com.ud.persistence.entity.ArticuloEntity;
+import co.com.ud.persistence.entity.UsuarioEntity;
 import co.com.ud.service.adm.IArticuloService;
 import co.com.ud.service.adm.IIdeaService;
 import co.com.ud.service.adm.IUsuarioService;
+
 
 @RestController
 @RequestMapping(value = "/v.1/articulos")
@@ -34,9 +35,9 @@ public class ArticuloController {
 	@Autowired
 	IArticuloService articuloService;
 	@Autowired
-	IIdeaService ideaService;
+    IIdeaService ideaService;
 	@Autowired
-	IUsuarioService usuarioService;
+    IUsuarioService usuarioService;
 	@Autowired
 	ModelMapper mapper;
 	
