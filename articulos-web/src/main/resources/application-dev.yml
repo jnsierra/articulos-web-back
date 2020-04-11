@@ -1,0 +1,28 @@
+jwt:
+  secret: a6e21884876f43819523c31033fa697e
+
+spring:
+  flyway:
+    table: articulos_web_flyway_schema_history
+    locations: classpath:/db/migration
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/articles
+    username: postgres
+    password: 12345678
+  #Propiedades para las conexiones a la base de datos
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+    generate-ddl: true
+
+org:
+  hibernate:
+    envers:
+      audit_strategy: org.hibernate.envers.strategy.ValidityAuditStrategy
+      audit_strategy_validity_store_revend_timestamp: true
