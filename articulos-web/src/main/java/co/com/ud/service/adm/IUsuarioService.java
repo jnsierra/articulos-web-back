@@ -33,13 +33,13 @@ public interface IUsuarioService {
 	
 	/**
 	 * Metodo con el cual obtengo un usuario por medio de su correo
-	 * @param correo
+	 * @param
 	 * @return
 	 */
 	List<UsuarioEntity> getByTipoUsuario(TipoUsuario tipoUsuario);
 	/**
 	 * Metodo con el cual obtengo el usuario por medio de su id
-	 * @param correo
+	 * @param
 	 * @return
 	 */
 	Optional<UsuarioEntity> getById(Long id);

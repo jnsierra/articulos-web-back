@@ -22,9 +22,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "us_usuario", uniqueConstraints = { @UniqueConstraint(columnNames = "email", name = "UK_USUARIO_EMAIL") })
@@ -33,6 +31,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Builder @NoArgsConstructor @AllArgsConstructor
 public class UsuarioEntity extends Auditable<String> {
 
 	@Id

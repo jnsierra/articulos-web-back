@@ -3,23 +3,10 @@ package co.com.ud.persistence.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-import lombok.Getter;
-import lombok.Setter;
+import co.com.ud.persistence.entity.enumeracion.ESTADO_IDEA;
+import lombok.*;
 
 @Entity
 @Table(name = "id_articulo")
@@ -38,7 +25,9 @@ import lombok.Setter;
 	@NamedQuery(name = "ArticuloEntity.getArticulosByEstado", query = " select art from ArticuloEntity art WHERE art.estado IN ('PUBLICADO', 'ENVIADO_POR_CORRECCIONES', '' ) ")
 	
 })
-@Getter @Setter
+@Getter @Setter @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ArticuloEntity extends Auditable<String> {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "articulo_generator")
@@ -50,8 +39,9 @@ public class ArticuloEntity extends Auditable<String> {
 	private String resumenEspanol;
 	@Column(name = "contenido")
 	private String contenido;
+	@Enumerated(EnumType.STRING)
 	@Column(name = "estado")
-	private String estado;
+	private ESTADO_IDEA estado;
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idea_id", nullable = false)
 	private IdeaEntity idea;
