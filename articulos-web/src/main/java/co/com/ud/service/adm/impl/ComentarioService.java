@@ -11,9 +11,13 @@ import co.com.ud.service.adm.IComentarioService;
 
 @Service
 public class ComentarioService implements IComentarioService {
-	
+
+	private final IComentarioRepository comentarioRepository;
+
 	@Autowired
-	IComentarioRepository comentarioRepository;
+	public ComentarioService(IComentarioRepository comentarioRepository) {
+		this.comentarioRepository = comentarioRepository;
+	}
 
 	@Override
 	public List<ComentarioEntity> getComentariosByArticuloId(Long idArticulo) {

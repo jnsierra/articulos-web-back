@@ -20,8 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "id_ideas")
@@ -33,8 +32,8 @@ import lombok.Setter;
 	@NamedQuery(name = "IdeaEntity.updateEstadoEspera", query = "update IdeaEntity idea SET idea.estado = 'EN_ESPERA' WHERE idea.id = :idIdea"),
 	@NamedQuery(name = "IdeaEntity.getEstadoIdeas", query = "SELECT idea FROM IdeaEntity idea where idea.estado in ('RECHAZAR','CREADA','APROBAR') order by idea.estado ")
 })
-@Getter
-@Setter
+@Getter @Setter @Builder
+@AllArgsConstructor @NoArgsConstructor
 public class IdeaEntity extends Auditable<String>{
 	@Id
 	@Column(name = "id", nullable = false, updatable = false)

@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
@@ -17,11 +18,14 @@ import io.jsonwebtoken.impl.TextCodec;
 
 @Service
 public class TokenService implements ITokenService {
-	
-	@Value("${jwt.secret}")
-	private String secret;
-	
+
+	private final String secret;
 	public static Integer seconds = Integer.valueOf("3600") ;
+
+	@Autowired
+	public TokenService(@Value("${jwt.secret}")String secret) {
+		this.secret = secret;
+	}
 	
 	@Override
 	public String generateToken(String user, List<GrantedAuthority> grantedAuthorities) {

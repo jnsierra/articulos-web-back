@@ -13,8 +13,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "id_comentario")
@@ -22,6 +21,7 @@ import lombok.Setter;
 	@NamedQuery(name = "ComentarioEntity.getListByIdeaId", query = "select com from ComentarioEntity com inner join fetch com.articulo  arti inner join arti.idea ide where ide.id = :ideaId  ")
 })
 @Getter @Setter
+@Builder @AllArgsConstructor @NoArgsConstructor
 public class ComentarioEntity extends Auditable<String> {
 	
 	@Id

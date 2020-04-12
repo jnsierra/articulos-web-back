@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import co.com.ud.service.auth.IAuthenticationFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,22 @@ import co.com.ud.service.adm.IUsuarioService;
 @Service
 public class IdeaService implements IIdeaService {
 
-	@Autowired
-	IIdeaRepository ideaRepository;
-	@Autowired
-	IUsuarioService usuarioService;
 
+	private final IIdeaRepository ideaRepository;
+	private final IUsuarioService usuarioService;
+	private final IAuthenticationFacade authenticationFacade;
 	private static final Logger logger = LoggerFactory.getLogger(IdeaService.class);
+
+	@Autowired
+	public IdeaService(IIdeaRepository ideaRepository, IUsuarioService usuarioService, IAuthenticationFacade authenticationFacade) {
+		this.ideaRepository = ideaRepository;
+		this.usuarioService = usuarioService;
+		this.authenticationFacade = authenticationFacade;
+	}
 
 	@Override
 	public IdeaEntity guardarIdea(IdeaEntity idea) {
-		String usuario = SecurityContextHolder.getContext().getAuthentication().getName();
+		String usuario = authenticationFacade.getAuthName();
 		logger.info("Usuario Loggeado: ".concat(usuario));
 		// Buscamos el id del usuario logeado
 		List<UsuarioEntity> usuariosId = usuarioService.getByCorreo(usuario);

@@ -1,10 +1,9 @@
 package co.com.ud.service.adm.impl;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
+import co.com.ud.persistence.entity.enumeracion.ESTADO_IDEA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +15,13 @@ import co.com.ud.service.adm.IArticuloService;
 @Service
 public class ArticuloService implements IArticuloService {
 	
+
+	private final IArticuloRepository articuloRepository;
+
 	@Autowired
-	IArticuloRepository articuloRepository;
+	public ArticuloService(IArticuloRepository articuloRepository) {
+		this.articuloRepository = articuloRepository;
+	}
 
 	@Override
 	public ArticuloEntity guardarArticulo(ArticuloEntity articulo) {
@@ -85,8 +89,16 @@ public class ArticuloService implements IArticuloService {
 
 	@Override
 	public Map<String, Long> getArticulosByEstado() {
-		return articuloRepository.getArticulosByEstado().stream().parallel()
+		Map<String, Long> rta = new HashMap<>();
+		Map<ESTADO_IDEA, Long> articulos = articuloRepository.getArticulosByEstado().stream().parallel()
 				.collect(Collectors.groupingBy(ArticuloEntity::getEstado, Collectors.counting()));
+		Iterator<Map.Entry<ESTADO_IDEA, Long>> iterator = articulos.entrySet().iterator();
+		while (iterator.hasNext()) {
+			Map.Entry<ESTADO_IDEA, Long> entry = iterator.next();
+			rta.put(entry.getKey().toString(), entry.getValue());
+		}
+		return rta;
 	}
+
 
 }
