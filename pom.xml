@@ -19,6 +19,8 @@
         <swagger.version>2.9.2</swagger.version>
         <guava.version>20.0</guava.version>
         <modelmapper.version>2.3.0</modelmapper.version>
+        <cucumber.version>4.7.0</cucumber.version>
+        <jacoco.version>0.8.5</jacoco.version>
     </properties>
     <dependencies>
         <dependency>
@@ -86,17 +88,33 @@
             <version>1.0.0-alpha-3</version>
         </dependency>
         <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20080701</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <!-- Ini dependencias para cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Fin dependencias para cucumber -->
     </dependencies>
     <modules>
         <module>articulos-web</module>
+        <module>articulos-bussines</module>
         <module>articulos-acceso-datos</module>
         <module>articulos-seguridad</module>
     </modules>
@@ -105,6 +123,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -130,10 +149,11 @@
                                     <excludes>
                                         <exclude>co.com.ud.Application</exclude>
                                         <exclude>co.com.ud.repository.entity.*</exclude>
-                                        <exclude>co.com.ud.adm.dto.*</exclude>
+                                        <exclude>co.com.ud.bussines.service.adm.dto.*</exclude>
                                         <exclude>co.com.ud.config.*</exclude>
-                                        <exclude>co.com.ud.adm.rest.*</exclude>
-                                        <exclue>co.com.ud.service.auth.impl.AuthenticationFacade</exclue>
+                                        <exclude>co.com.ud.controller.adm.rest.*</exclude>
+                                        <exclude>co.com.ud.controller.adm.dto.*</exclude>
+                                        <exclude>co.com.ud.bussines.service.auth.impl.AuthenticationFacade</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>

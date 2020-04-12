@@ -1,0 +1,13 @@
+ALTER TABLE IF EXISTS us_usuario ADD CONSTRAINT UK_USUARIO_EMAIL UNIQUE (email) ;
+
+
+ALTER TABLE IF EXISTS id_articulo ADD CONSTRAINT FK3lyd4dttd7x674ov44moijdea
+FOREIGN KEY (idea_id) REFERENCES id_ideas ;
+
+
+ALTER TABLE IF EXISTS id_comentario ADD CONSTRAINT FKdln9aq36vng6qipp2p68gjfd7
+FOREIGN KEY (articulo_id) REFERENCES id_articulo ;
+
+
+ALTER TABLE IF EXISTS id_ideas ADD CONSTRAINT FKi6nh72g462wqphapxfsahivr8
+FOREIGN KEY (usuario_id) REFERENCES us_usuario ;
