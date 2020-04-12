@@ -18,11 +18,15 @@ import co.com.ud.service.adm.IUsuarioService;
 
 @Service
 public class UsuarioService implements IUsuarioService{
+
+	private final IUsuarioRepository usuarioRepository;
+	private final ITokenService tokenService;
+
 	@Autowired
-	IUsuarioRepository usuarioRepository;
-	
-	@Autowired
-	ITokenService tokenService;
+	public UsuarioService(IUsuarioRepository usuarioRepository, ITokenService tokenService) {
+		this.usuarioRepository = usuarioRepository;
+		this.tokenService = tokenService;
+	}
 
 	@Override
 	public Optional<UsuarioEntity> loginUser(String correo, String contra) {

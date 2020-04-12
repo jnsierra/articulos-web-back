@@ -4,6 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+
+import java.util.List;
 
 @SpringBootTest
 public class TokenServiceTest {
@@ -12,10 +16,12 @@ public class TokenServiceTest {
 
     @Before
     public void setUp(){
-
+        tokenService = new TokenService("1234567890");
     }
     @Test
     public void testGenerateToken(){
-        Assert.assertNotNull("Hoola");
+        List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_ADMIN");
+        String rta = tokenService.generateToken("jnsierrac@gmail.com", grantedAuthorities);
+        Assert.assertNotNull(rta);
     }
 }

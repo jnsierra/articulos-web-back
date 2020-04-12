@@ -133,6 +133,7 @@
                                         <exclude>co.com.ud.adm.dto.*</exclude>
                                         <exclude>co.com.ud.config.*</exclude>
                                         <exclude>co.com.ud.adm.rest.*</exclude>
+                                        <exclue>co.com.ud.service.auth.impl.AuthenticationFacade</exclue>
                                     </excludes>
                                     <limits>
                                         <limit>
