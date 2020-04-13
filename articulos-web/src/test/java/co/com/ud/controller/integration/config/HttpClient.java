@@ -15,7 +15,7 @@ import static io.cucumber.spring.CucumberTestContext.SCOPE_CUCUMBER_GLUE;
 @Component
 @Scope(SCOPE_CUCUMBER_GLUE)
 public class HttpClient {
-    private final String SERVER_URL = "https://localhost";
+    private final String SERVER_URL = "http://localhost";
     private final String EXAMPLE_ENDPOINT = "/api";
 
     @LocalServerPort
@@ -34,7 +34,7 @@ public class HttpClient {
         return restTemplate.exchange(exampleEndPoint().concat(resource), HttpMethod.GET, request,String.class ).getBody();
     }
 
-    public ResponseEntity<String> postWithRequest(String resource, Object payload, String token){
+    public ResponseEntity<String> postWithRequestAndToken(String resource, Object payload, String token){
         System.out.println(exampleEndPoint().concat(resource));
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", token);

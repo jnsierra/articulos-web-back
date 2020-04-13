@@ -1,10 +1,10 @@
 package co.com.ud.controller.adm.dto;
 
 import co.com.ud.persistence.entity.enumeracion.TipoUsuario;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter @Setter
+@Getter @Setter @Builder
+@AllArgsConstructor @NoArgsConstructor
 public class UsuarioDto {
 		
 	private Long id;
